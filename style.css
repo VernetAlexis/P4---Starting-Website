@@ -23,6 +23,7 @@ a:hover {
     top: 0;
     bottom: 0;
     width: 100%;
+    z-index: 100000;
     background: #FFFFFF url("img/pageload-spinner.gif") no-repeat center center;
 }
 
@@ -288,6 +289,7 @@ a:hover {
 
 .navbar {
     margin-bottom: 0;
+    z-index: 1;
 }
 
 .navbar-brand {
@@ -317,6 +319,7 @@ a:hover {
     padding-top: 2px;
     margin-right: -16px;
     float: right;
+    z-index: 1;
 }
 
 .nav > li {
@@ -356,6 +359,7 @@ a:hover {
 .nav-invert .navbar-brand {
     float: right;
     position: relative;
+    z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -453,7 +457,7 @@ nav .caret {
 .btn-d:hover,
 .btn-d:focus {
     color: #FFF;
-    background: rgb(255, 255, 255)
+    background: rgba(0, 0, 0, .3);
 }
 
 button {
@@ -512,7 +516,8 @@ button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1;
+    opacity: 0;
+    z-index: 500;
     transition: all .3s ease-in-out;
 }
 
@@ -587,7 +592,7 @@ a[data-lightbox]:hover img {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 1;
+    z-index: 20;
     background: rgba(0, 0, 0, .5);
     border: none;
     line-height: 30px;
@@ -610,6 +615,7 @@ a[data-lightbox]:hover img {
     transition: all .2s ease-in-out;
     position: absolute;
     top: 45%;
+    z-index: 1;
     opacity: 0.4;
 }
 
@@ -842,13 +848,13 @@ h4 {
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .b-parallax {
         background-attachment: scroll;
     }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .b-parallax {
         background-attachment: scroll;
     }
@@ -866,10 +872,6 @@ h4 {
         overflow-x: hidden;
         position: relative;
     }
-    .bloc {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
-    }
     .bloc-group,
     .bloc-group .bloc {
         display: block;
@@ -878,8 +880,6 @@ h4 {
     .bloc-fill-screen .fill-bloc-top-edge,
     .bloc-fill-screen .fill-bloc-bottom-edge {
         padding: 0 20px;
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
     }
 }
 
@@ -991,6 +991,9 @@ h4 {
     }
     .a-block {
         padding: 0 10px;
+    }
+    .btn-dwn {
+        display: none;
     }
     .voffset {
         margin-top: 5px;
